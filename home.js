@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuIcon.addEventListener('click', function() {
         navbar.classList.toggle('active');
-        menuIcon.style.display = 'block';
-        // closeIcon.style.display = 'block';
+        
     });
 
     document.addEventListener('click', function(event) {
