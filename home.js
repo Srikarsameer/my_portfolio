@@ -5,21 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuIcon.addEventListener('click', function() {
         navbar.classList.toggle('active');
-        menuIcon.style.display = 'none';
-        closeIcon.style.display = 'block';
-    });
-    closeIcon.addEventListener('click', function() {
-        navbar.classList.remove('active');
-        closeIcon.style.display = 'none'; 
-        menuIcon.style.display = 'block'; 
+        menuIcon.style.display = 'block';
+        // closeIcon.style.display = 'block';
     });
 
-    // document.addEventListener('click', function(event) {
-    //     const target = event.target;
-    //     if (!target.closest('.header')) {
-    //         navbar.classList.remove('active');
-    //     }
-    // });
+    document.addEventListener('click', function(event) {
+        const target = event.target;
+        if (!target.closest('.header')) {
+            navbar.classList.remove('active');
+        }
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
