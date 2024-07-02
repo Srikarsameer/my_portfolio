@@ -1,36 +1,55 @@
-/*icon navbar*/
-let menuIcon=document.querySelector('#menu-icon');
-let navbar=document.querySelector('.navbar');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const navbar = document.getElementById('navbar');
 
-menuIcon.onclick=()=>{
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
-
-
-let sections=document.querySelectorAll('section');
-let navLinks =document.querySelectorAll('header nav a');
-
-window.onscroll=()=>{
-    sections.forEach(sec=>{
-        let top=window.scrollY;
-        let offset=sec.offsetTop-150;
-        let height=sec.offsetHeight;
-        let id=sec.getAttribute('id');
-
-        if(top >= offset && top <offset+high){
-            navLinks.forEach(links=>{
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*='+ id+']').classList.add('active');
-            });
-        };
+    menuIcon.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+        menuIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+    });
+    closeIcon.addEventListener('click', function() {
+        navbar.classList.remove('active');
+        closeIcon.style.display = 'none'; 
+        menuIcon.style.display = 'block'; 
     });
 
-    /*===navbar==*/
-    let header=document.querySelector('header');
-    header.classList.toggle('sticky',window.scrollY >100);
+    // document.addEventListener('click', function(event) {
+    //     const target = event.target;
+    //     if (!target.closest('.header')) {
+    //         navbar.classList.remove('active');
+    //     }
+    // });
+});
 
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
     
-};
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();  
+        
+         
+        const formData = new FormData(contactForm);
+         
+        for (let [name, value] of formData.entries()) {
+            console.log(name, value);
+        }
+        
+         
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            alert('Form submitted successfully!');  
+            
+            contactForm.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to submit form. Please try again.'); // Optional error message
+        });
+    });
+});

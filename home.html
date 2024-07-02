@@ -15,8 +15,8 @@
         <header class="header">
             <a href="#" class="logo">Portfolio</a>
             <i class='bx bx-menu' id="menu-icon"></i>
-
-            <nav class="navbar">
+            <i class="bx bx-x" id="close-icon"></i>
+            <nav class="navbar" id="navbar">
                 <a href="#home" class="active">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -36,21 +36,21 @@
                 <div class="socialmedia">
                     <a href="https://www.linkedin.com/in/srikar-sameer-talagadadeevi-aab133223/"><i class='bx bxl-linkedin-square' ></i></a>
                     <a href="https://github.com/Srikarsameer"><i class='bx bxl-github' ></i></a>
-                    <a href=""><i class='bx bx-envelope'></i></a>
+                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new"><i class='bx bx-envelope'></i></a>
                     <a href="https://twitter.com/SameerSrikar"><i class='bx bxl-twitter' ></i></a>
                 </div>
-                <a href="Sameer@CV.pdf" class="btn">Download CV</a>
+                <a href="/assets/Sameer@CV.pdf" class="btn">Download CV</a>
             </div>
 
             <div class="home-img">
-                <img src="sam1.jpeg" alt="image">
+                <img src="/assets/sam1.jpeg" alt="image">
             </div>
         </section>
 
         <!-- about section -->
         <section class="about" id="about">
         <div class="about-img">
-            <img src="sam1.jpeg" alt="">
+            <img src="/assets/sam1.jpeg" alt="">
         </div>   
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
@@ -95,7 +95,7 @@
 
             <div class="portfolio-container">
                 <div class="portfolio-box">
-                   <img src="projec1.jpg" alt="">
+                   <img src="/assets/projec1.jpg" alt="">
                    <div class="portfolio-layer">
                     <h4>Skin Disease Detection</h4>
                     <p>We have developed an AI-based tool for preliminary diagnosis of Dermatological manifestations</p>
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="portfolio-box">
-                    <img src="project3.jpg" alt="">
+                    <img src="/assets/project3.jpg" alt="">
                     <div class="portfolio-layer">
                      <h4>Tele-Medicine Kiosk</h4>
                      <p>A Tele-medicine kiosk using AI to offer remote healthcare services, bridging the gap in medical
@@ -114,10 +114,10 @@
                 </div>
 
                 <div class="portfolio-box">
-                       <img src="projec2.jpg" alt="">
+                       <img src="/assets/projec2.jpg" alt="">
                        <div class="portfolio-layer">
-                        <h4>Predict the Approval of Drug</h4>
-                        <p>Predicting the Approval of Drug using classification</p>
+                        <h4>MIND MAZE</h4>
+                        <p>Mind maze is a quiz application, which user can assess their talent by taking quizes.</p>
                         <a href="#"><i class='bx bx-link-external' ></i></a>
                        </div> 
                 </div>
@@ -128,17 +128,18 @@
         <section class="contact" id="contact">
             <h2 class="heading">Interact With <span>Me!!</span></h2>
 
-            <form action="#">
+            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                <input type="hidden" name="access_key" value="730902ab-6e00-4fa7-88e2-7e2358c290ad">
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="text" placeholder="Email address">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <input type="text" name="email" placeholder="Email address" required>
                 </div>
                 <div class="input-box">
-                    <input type="number" placeholder="Mobile number">
-                    <input type="text" placeholder="Email subject">
+                    <input type="number" name="number" placeholder="Mobile number" required>
+                    <input type="text" name="subject" placeholder="Email subject" required>
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" class="btn">
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" name="submit" value="Send Message" class="btn">
             </form>
         </section>
 
