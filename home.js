@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
     const navbar = document.getElementById('navbar');
+    const navbarLinks = document.querySelectorAll('.navbar-link');
 
     menuIcon.addEventListener('click', function() {
         navbar.classList.toggle('active');
@@ -14,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('active');
         }
     });
+    navbarLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          navbar.classList.remove('active');
+        });
+      });
 });
 document.addEventListener('DOMContentLoaded', () => {
     const name = "Srikar Sameer";
@@ -35,16 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(typeWriter, 100); 
         } else {
           isDeleting = false;
-          setTimeout(typeWriter, 500); 
+          setTimeout(typeWriter, 80); 
         }
       } else {
         if (i < restOfName.length) {
           animatedElement.innerHTML += restOfName.charAt(i);
           i++;
-          setTimeout(typeWriter, 50); 
+          setTimeout(typeWriter, 100); 
         } else {
           isDeleting = true;
-          setTimeout(typeWriter, 1000); // Pause before deleting
+          setTimeout(typeWriter, 1000); 
         }
       }
     }
