@@ -381,6 +381,7 @@ span {
     .navbar a {
         margin: 1rem 0; 
         color: var(--text-color);
+        font-size: 2rem;
     }
 
     .logo {
@@ -436,7 +437,7 @@ span {
     }
 
     .navbar a {
-        font-size: 1.2em;
+        font-size: 2.0em;
         margin-left: 1.5rem; 
     }
 
