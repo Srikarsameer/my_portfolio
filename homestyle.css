@@ -450,9 +450,6 @@ span {
     .contact form .input-box input {
         width: 100%;
     }
-    .portfolio-layer p {
-        font-size: 1.8rem; 
-    }
 }
 @media (max-width: 480px) {
     html {
