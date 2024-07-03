@@ -430,10 +430,6 @@ span {
         font-size: 3rem; 
     }
 
-    .portfolio-layer h4 {
-        font-size: 3.0rem; 
-    }
-
     .skills-container {
         flex-direction: column; 
         align-items: center; 
@@ -504,7 +500,4 @@ span {
         font-size: 2rem; 
     }
 
-    .portfolio-layer h4 {
-        font-size: 3.0rem; 
-    }
 }
