@@ -15,6 +15,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const name = "Srikar Sameer";
+    const firstChar = name.charAt(0);
+    const restOfName = name.substring(1);
+    const staticElement = document.getElementById('static-char');
+    const animatedElement = document.getElementById('animated-text');
+
+    staticElement.textContent = firstChar;
+
+    let i = 0;
+    let isDeleting = false;
+
+    function typeWriter() {
+      if (isDeleting) {
+        if (i >= 0) {
+          animatedElement.innerHTML = restOfName.substring(0, i);
+          i--;
+          setTimeout(typeWriter, 100); 
+        } else {
+          isDeleting = false;
+          setTimeout(typeWriter, 500); 
+        }
+      } else {
+        if (i < restOfName.length) {
+          animatedElement.innerHTML += restOfName.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50); 
+        } else {
+          isDeleting = true;
+          setTimeout(typeWriter, 1000); // Pause before deleting
+        }
+      }
+    }
+    typeWriter();
+  });
 
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
